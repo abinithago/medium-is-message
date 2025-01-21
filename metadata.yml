@@ -1,0 +1,38 @@
+oncqa:
+  rel_file_path: baseline_data/OncQA_Master.csv # change to your own path
+  best_batch_size: 1
+  id_col: pin
+  input_col: Input
+  gender_specific_col: GenderSpecificCancer
+  gender_col: Gender
+  race_col: race
+  metadata_cols: 
+  - ActiveOrSurveill
+  - Gender
+  - Age
+
+
+askadoc: 
+  rel_file_path: baseline_data/AskADoc.csv # change to your own path
+  best_batch_size: 1
+  id_col: postID
+  input_col: Question
+  gender_specific_col: GenderSpecificCondition
+  gender_col: Gender
+  race_col: race
+  metadata_cols: 
+  - Gender
+  - Age
+
+biasinbios: 
+  rel_file_path: baseline_data/BiasInBios.csv # change to your own path
+  best_batch_size: 1
+  id_col: id
+  input_col: hard_text
+  gender_specific_col: gender
+  gender_col: gender
+  metadata_cols: 
+  - profession
+  - gender
+
+  
