@@ -13,6 +13,7 @@ The general files work as follows:
 | binary_annot.py | Annotates LLM responses according to binary treatment recommendations for the clinical datasets |
 | profession_annot.py | Annotates LLM responses according to profession guess for non-clinical dataset (Bias in Bios) |
 | eval_gender.py | Samples LLM for gender inference using gender-removed contexts |
+| utils.py | Helps organize overall file structure |
 
 To utilize our codebase and recreate our results, you will need access to OpenAI API key
 and Huggingface token, which we indicate through comments in our file structure. 
