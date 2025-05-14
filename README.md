@@ -1,2 +1,2 @@
-# Medium is the Message: How Non-Clinical Information Shapes Clinical LLM Reasoning
+# The Medium is the Message: How Non-Clinical Information Shapes Clinical LLM Reasoning
 
