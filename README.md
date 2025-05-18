@@ -37,34 +37,55 @@ HUGGINGFACE_TOKEN=your_token_here
 ```
 .
 ├── code/
-│   ├── perturb_data_llm.py      # Explicit gender changes (swapping and removal)
-│   ├── perturb_data_lang.py     # Tone/style changes (uncertain and colorful language)
-│   ├── perturb_data_regex.py    # Structural changes (typo, whitespace, case, etc.)
-│   ├── collect_responses.py     # LLM response collection
-│   ├── binary_annot.py         # Binary treatment recommendation annotation
-│   ├── profession_annot.py     # Profession inference annotation
-│   ├── eval_gender.py          # Gender inference from gender-removed contexts
-│   └── utils.py               # Helper functions and file structure organization
-├── baseline_data/             # Original dataset files
-├── requirements.txt           # Project dependencies
-└── README.md                 # Project documentation
-
+│   ├── core/
+│   │   ├── __init__.py
+│   │   ├── types.py           # Core type definitions
+│   │   ├── perturbation.py    # Base perturbation class
+│   │   ├── annotation.py      # Base annotation class
+│   │   └── llm_sampling.py    # LLM interaction utilities
+│   ├── perturbation/
+│   │   ├── __init__.py
+│   │   ├── gender.py          # Gender-based modifications
+│   │   ├── language.py        # Language style alterations
+│   │   └── structure.py       # Basic text structure changes
+│   ├── annotation/
+│   │   ├── __init__.py
+│   │   ├── treatment.py       # Treatment recommendation annotation
+│   │   └── profession.py      # Profession inference annotation
+│   ├── evaluation/
+│   │   ├── __init__.py
+│   │   └── gender_inference.py # Gender inference evaluation
+│   └── utils/
+│       ├── __init__.py
+│       └── helpers.py         # Helper functions
+├── baseline_data/            # Original dataset files
+├── config.py                # Configuration settings
+├── requirements.txt         # Project dependencies
+└── README.md               # Project documentation
 ```
 
-## Usage
+## Module Overview
 
-Each script in the `code/` directory serves a specific purpose in the research pipeline:
+### Core Module
+- `types.py`: Core data structures and type definitions
+- `perturbation.py`: Abstract base class for text perturbations
+- `annotation.py`: Abstract base class for response annotations
+- `llm_sampling.py`: Utilities for interacting with LLMs
 
-1. **Data Perturbation**:
-   - `perturb_data_llm.py`: Gender-based modifications
-   - `perturb_data_lang.py`: Language style alterations
-   - `perturb_data_regex.py`: Basic text structure changes
+### Perturbation Module
+- `gender.py`: Implementation of gender-based text modifications
+- `language.py`: Implementation of language style alterations
+- `structure.py`: Implementation of structural text changes
 
-2. **Analysis**:
-   - `collect_responses.py`: Gather LLM responses
-   - `binary_annot.py`: Analyze treatment recommendations
-   - `profession_annot.py`: Analyze profession inferences
-   - `eval_gender.py`: Evaluate gender detection
+### Annotation Module
+- `treatment.py`: Annotation of treatment recommendations
+- `profession.py`: Annotation of profession inferences
+
+### Evaluation Module
+- `gender_inference.py`: Evaluation of gender inference from modified texts
+
+### Utils Module
+- `helpers.py`: Common utility functions used across modules
 
 ## Requirements
 
@@ -73,23 +94,3 @@ Each script in the `code/` directory serves a specific purpose in the research p
 - Huggingface token
 - See `requirements.txt` for full dependency list
 
-## Citation
-
-If you use this code in your research, please cite our work:
-
-```bibtex
-@article{your-paper-citation,
-  title={The Medium is the Message: How Non-Clinical Information Shapes Clinical Decisions in LLMs},
-  author={Authors},
-  journal={Journal},
-  year={2023}
-}
-```
-
-## License
-
-[Add your license information here]
-
-## Contact
-
-[Add contact information here]
